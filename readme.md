@@ -543,6 +543,7 @@ To compile multiple files at the same time, we can either pass all the files tog
    - Put the function definitions (implementations) and local variables in the .c file
  - [ ] Test the module from the file that has your `main()` function
    - Include the .h file, not the .c file
+     - When including files from the same folder, the syntax is `#include "filename"`, not `#include <filename>`
    - To check that the duration is correct, call the program with `time ./program` from the command line, and look at the `real` time used
 
 
