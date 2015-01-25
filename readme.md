@@ -43,6 +43,15 @@ This text is intended to be a resource to prepare you for working on the elevato
     - [3: With no return value](#3-with-no-return-value)
     - [4: The smallest C program?](#4-the-smallest-c-program)
     - [5: Definitely the smallest C program.](#5-definitely-the-smallest-c-program)
+- [Appendix](#appendix)
+    - [Macros](#macros)
+    - [The `null` pointer](#the-null-pointer)
+    - [Pointer casting](#pointer-casting)
+    - [Function pointers](#function-pointers)
+    - [Higher-order functions](#higher-order-functions)
+      - [Example: `qsort`](#example-qsort)
+    - [Floating-point is hard](#floating-point-is-hard)
+    - [`clang-format`](#clang-format)
 
 Intro to C and Linux
 ====================
@@ -678,3 +687,37 @@ As an added bonus, this is also the shortest program that produces its own sourc
 The words "Segmentation Fault" means that the operating system prevented you from accessing memory that your program doesn't own. In this case, the value of `_start` was not defined, so `ld` gave it a default value, one that happened to be outside the valid memory region of the program. Without an operating system, this program would have interpreted whatever happened to lie in this memory as valid machine code, and all hell would break loose.
 
 
+Appendix
+========
+
+###Macros
+Todo
+
+###The `null` pointer
+Todo
+ - if(ptr)
+ 
+###Pointer casting
+Todo
+ - reinterpret cast: `*(T*)&v`
+
+###Function pointers
+Todo
+ - function types
+ 
+
+###Higher-order functions
+Todo
+####Example: `qsort`
+
+###Floating-point is hard
+Todo
+ - digital representation of analog concept -> reduced presicion
+ - `recurrence!("108-(815-1500/a[n-2])/a[n-1]")(4.0, 4.25)`
+ - foldl1 (+) (replicate 10 0.1)  !=  0.1 * 10
+ 
+###`clang-format`
+Todo
+Upload suggested `.clang-format` file
+ 
+ 
