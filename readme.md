@@ -70,11 +70,13 @@ We can create new files using `touch fileName`, and edit them using - for exampl
    - Call `ls ..` to check that the file is moved.
  - Similarly to `mv`, we also have `cp` for copying.
  - [ ] We can remove files using `rm`. Remove the file you created, moved (and any copies you created if you also copied it).
+   - To remove folders, we must use the option `rm -r folder` (`-r` means "recursive").
 
 `mv`, `cp` and `rm` all have their own set of options. You can see what these are by calling eg `rm --help`. For `cp` and `rm`, we see that we need to use the option `-r` or `--recursive` to copy or remove folders.
 
 If we want to select multiple files that match a certain pattern, we can use the wildcard `*`. For example, if we want to remove all files that end in `.txt`, we can call rm `*.txt`.
     
+You can save yourself some typing by using tab for autocomplete, and the arrow keys to navigate previous commands.
     
 In the terminal, Ctrl-C and Ctrl-V do not perform copy/paste, and you can find a brief history as to why [here](http://superuser.com/a/421468). Instead, use `Ctrl + Shift + [C/V/X]`
 
@@ -264,7 +266,7 @@ if(condition){
 
 ####Structs
 
-We can create composite types (a type composed of primitive types (and other composite types)) by using the `struct` keyword:
+A `struct` is a gathering of datatypes, that is composed of primitive types (and/or other structs).
 ```C
 struct Type {
     int     firstMember;
@@ -272,11 +274,15 @@ struct Type {
 };
 ```
 
-To create an instance of `Type`, we write:
+To create an instance of our new `Type`, we write:
 ```C
 struct Type someInstanceOfType;
 // And to assign values to struct members:
 someInstanceOfType.firstMember = 5;
+
+// (This is analogous to)
+int someInstanceOfInt;
+someInstanceOfInt = 8;
 ```
 
 We can also assign the members all at once:
@@ -432,14 +438,14 @@ In C, it is said that "declaration reflects use". As we saw with pointers, they 
 int arr1[8]; 
 
 // Arrays are 0-indexed
-printf("The first element: arr1[%d]: %d (should be junk)\n", 0, arr[0]);
+printf("The first element: arr1[%d]: %d (should be junk)\n", 0, arr1[0]);
 
 // Declares an array of 6 integers, where the first 3 elements are 4, 2 and 7
 //  The remaining elements will be set to 0
 int arr2[6] = {4, 2, 7};
-printf("arr2[%d]: %d (should be 4)\n", 0, arr[0]);
-printf("arr2[%d]: %d (should be 7)\n", 2, arr[2]);
-printf("arr2[%d]: %d (should be 0)\n", 3, arr[3]);
+printf("arr2[%d]: %d (should be 4)\n", 0, arr2[0]);
+printf("arr2[%d]: %d (should be 7)\n", 2, arr2[2]);
+printf("arr2[%d]: %d (should be 0)\n", 3, arr2[3]);
 
 // We can therefore initialize an entire array to 0 by writing
 int arr3[8] = {0};
