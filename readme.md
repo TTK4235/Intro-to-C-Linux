@@ -295,16 +295,19 @@ struct Type instanceTwo = {.secondMember = 7.2, .firstMember = 6};
 Note that we need to write `struct Type`, and not just `Type`! To avoid this, we can use `typedef` keyword:
 
 #####Typedef
-The only thing `typedef` does is give a new name to a type. This is also useful for giving the compiler some additional help, so that you don't accidentally write `birthday = currentSpeed + numGiraffes`. See [typedef](http://en.wikipedia.org/wiki/Typedef) on Wikipedia.
+The only thing `typedef` does is give a new name to a type (see [typedef](http://en.wikipedia.org/wiki/Typedef) on Wikipedia).
 
-With typedef, we can shorten declarations of complex types:
+With typedef, we can give a new name to an existing type, which lets us shorten declarations of more complex types:
 ```C
+typedef  int  i32;
+// From this point onward, `int` and `i32` can be used interchangeably
+
 typedef  struct Foo  Bar;
 // These are now equivalent:
 struct Foo  instance;
 Bar         instance;
 
-// makes `struct tag_type` and `Type` equivalent
+// The following makes `struct tag_type` and `Type` equivalent
 typedef struct tag_type  Type;
 struct tag_type {
     int     firstMember;
